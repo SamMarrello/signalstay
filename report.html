@@ -11,7 +11,6 @@
         /* Alert Badge */
         .market-status { position: absolute; top: 35px; right: 35px; padding: 8px 16px; border-radius: 50px; font-weight: 700; font-size: 13px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
         .status-alert { background: #fee2e2; color: #dc2626; border: 1px solid #fecaca; }
-        .status-normal { background: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; }
         .status-dot { height: 8px; width: 8px; border-radius: 50%; }
         
         .header { border-bottom: 2px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 30px; }
@@ -23,14 +22,16 @@
         .forecast-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
         .week-card { background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
         .week-label { font-size: 13px; color: #64748b; margin-bottom: 8px; font-weight: 600; }
-        .week-value { font-size: 36px; font-weight: 800; color: #1e3a8a; margin-bottom: 15px; }
         
-        /* Velocity */
-        .velocity { font-size: 14px; font-weight: 700; margin-left: 8px; }
+        /* Pricing Integration */
+        .week-value { font-size: 32px; font-weight: 800; color: #1e3a8a; margin-bottom: 4px; display: flex; align-items: baseline; justify-content: space-between; }
+        .avg-rate { font-size: 14px; color: #475569; font-weight: 500; margin-bottom: 12px; }
+        .rate-delta { font-size: 12px; font-weight: 700; margin-left: 4px; }
+        
+        .velocity { font-size: 14px; font-weight: 700; }
         .v-up { color: #dc2626; }
         .v-stable { color: #64748b; }
 
-        /* Day groups - 3 columns */
         .day-groups { display: flex; justify-content: space-between; gap: 10px; margin-top: 15px; padding-top: 15px; border-top: 1px dashed #cbd5e1; }
         .day-group { text-align: center; flex: 1; }
         .group-label { font-size: 11px; color: #94a3b8; font-weight: 700; margin-bottom: 5px; }
@@ -45,13 +46,9 @@
         .insights strong { color: #1e40af; }
 
         .footer { font-size: 11px; color: #94a3b8; border-top: 1px solid #e2e8f0; margin-top: 40px; padding-top: 20px; line-height: 1.6; }
-        .footer strong { color: #64748b; }
     </style>
 </head>
 <body>
-    <div style="background: #1e3a8a; padding: 10px; text-align: center;">
-    <a href="index.html" style="color: white; text-decoration: none; font-size: 14px;">&larr; Back to Information Page</a>
-</div>
     <div class="report-container">
         <div class="market-status status-alert">
             <span class="status-dot" style="background: #dc2626;"></span>
@@ -68,80 +65,49 @@
             <div class="week-card">
                 <div class="week-label">Last Week (Actual)</div>
                 <div class="week-value">48%</div>
+                <div class="avg-rate">Avg Rate: $178 <span class="rate-delta v-stable">—</span></div>
                 <div class="day-groups">
-                    <div class="day-group">
-                        <div class="group-label">Mon-Tue</div>
-                        <div class="group-value">42%</div>
-                    </div>
-                    <div class="day-group">
-                        <div class="group-label">Wed-Thu</div>
-                        <div class="group-value">45%</div>
-                    </div>
-                    <div class="day-group">
-                        <div class="group-label">Fri-Sat</div>
-                        <div class="group-value">55%</div>
-                    </div>
+                    <div class="day-group"><div class="group-label">M-T</div><div class="group-value">42%</div></div>
+                    <div class="day-group"><div class="group-label">W-T</div><div class="group-value">45%</div></div>
+                    <div class="day-group"><div class="group-label">F-S</div><div class="group-value">55%</div></div>
                 </div>
             </div>
 
             <div class="week-card">
                 <div class="week-label">This Week (Forecast)</div>
                 <div class="week-value">52% <span class="velocity v-up">▲ 4%</span></div>
+                <div class="avg-rate">Avg Rate: $194 <span class="rate-delta v-up">▲ 9%</span></div>
                 <div class="day-groups">
-                    <div class="day-group">
-                        <div class="group-label">Mon-Tue</div>
-                        <div class="group-value">46%</div>
-                    </div>
-                    <div class="day-group">
-                        <div class="group-label">Wed-Thu</div>
-                        <div class="group-value">50%</div>
-                    </div>
-                    <div class="day-group">
-                        <div class="group-label">Fri-Sat</div>
-                        <div class="group-value">60%</div>
-                    </div>
+                    <div class="day-group"><div class="group-label">M-T</div><div class="group-value">46%</div></div>
+                    <div class="day-group"><div class="group-label">W-T</div><div class="group-value">50%</div></div>
+                    <div class="day-group"><div class="group-label">F-S</div><div class="group-value">60%</div></div>
                 </div>
             </div>
 
-            <div class="week-card">
+            <div class="week-card" style="border-color: #3b82f6;">
                 <div class="week-label">Next Week (Forecast)</div>
                 <div class="week-value">61% <span class="velocity v-up">▲ 13%</span></div>
+                <div class="avg-rate">Avg Rate: $242 <span class="rate-delta v-up">▲ 24%</span></div>
                 <div class="day-groups">
-                    <div class="day-group">
-                        <div class="group-label">Mon-Tue</div>
-                        <div class="group-value spike">55%</div>
-                    </div>
-                    <div class="day-group">
-                        <div class="group-label">Wed-Thu</div>
-                        <div class="group-value">56%</div>
-                    </div>
-                    <div class="day-group">
-                        <div class="group-label">Fri-Sat</div>
-                        <div class="group-value spike">71%</div>
-                    </div>
+                    <div class="day-group"><div class="group-label">M-T</div><div class="group-value spike">55%</div></div>
+                    <div class="day-group"><div class="group-label">W-T</div><div class="group-value">56%</div></div>
+                    <div class="day-group"><div class="group-label">F-S</div><div class="group-value spike">71%</div></div>
                 </div>
             </div>
         </div>
 
         <div class="insights">
-    <h3>Recommended Actions</h3>
-    <ul>
-        <li><strong>Event coordination:</strong> Alert active conference/group 
-        inquiries that Sept 17-18 has limited availability - secure blocks this week.</li>
-        <li><strong>Stakeholder brief:</strong> Notify tourism board and hospitality 
-        partners about weekend capacity constraint.</li>
-        <li><strong>Demand verification:</strong> Confirm source of Sept 13 Monday spike 
-        (likely Queen's event or tournament) to plan visitor services.</li>
-        <li><strong>Regional spillover:</strong> If demand exceeds Kingston supply, 
-        coordinate with nearby markets for overflow accommodation.</li>
-    </ul>
-</div>
+            <h3>Recommended Actions</h3>
+            <ul>
+                <li><strong>Dynamic Pricing:</strong> With a 24% surge in projected ADR for next week, ensure non-refundable rates are prioritized for the Sept 17-18 peak.</li>
+                <li><strong>Event coordination:</strong> Alert active group inquiries that availability is tightening rapidly; secure blocks before further rate escalations.</li>
+                <li><strong>Demand verification:</strong> Confirm source of Sept 13 Monday spike (likely Queen's event) to optimize staffing and services.</li>
+            </ul>
+        </div>
 
         <div class="footer">
-            <strong>Data Source:</strong> Real-time availability data from 20 hotels across Kingston, ON.<br>
-            <strong>Update Frequency:</strong> Queried 3x daily (morning, afternoon, 8PM EST final).<br>
-            <strong>Methodology:</strong> Occupancy estimated from remaining room inventory on major booking platforms (Marriott, IHG, Hilton, Choice, direct sites).<br>
-            <strong>Note:</strong> This is directional intelligence for early trend detection, not audited historical data. Aggregate market data only - individual hotel performance is not disclosed.
+            <strong>Data Source:</strong> Real-time availability and public rate data from 20 hotels in Kingston, ON.<br>
+            <strong>Note:</strong> Pricing reflects average daily rate for remaining inventory.
         </div>
     </div>
 </body>
