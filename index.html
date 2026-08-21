@@ -2,34 +2,161 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="SignalStay - Development & Energy Infrastructure in Kingston">
-    <meta property="og:description" content="Development site origination, EV charging deployment, and energy cost reduction for commercial properties in Kingston, Ontario.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignalStay | Site origination at province scale</title>
+    <meta name="description" content="SignalStay originates sites. Tell us what you need to build and Kestral — our origination engine — searches the whole of Ontario for where it goes.">
+    <meta property="og:title" content="SignalStay — Site origination at province scale">
+    <meta property="og:description" content="Tell us what you need to build. Kestral reads the entire province and returns the sites that fit.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.signalstay.ca">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SignalStay works at the intersection of real estate and energy in Kingston, Ontario. Development site origination, EV charging, and battery storage for commercial properties.">
-    <title>SignalStay | Development & Energy Infrastructure — Kingston, Ontario</title>
+    <link rel="canonical" href="https://www.signalstay.ca">
     <style>
-        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: #334155; margin: 0; background: #fff; }
-        .container { max-width: 700px; margin: 0 auto; padding: 60px 20px; }
-        h1 { font-size: 2.2rem; color: #1e3a8a; letter-spacing: -0.5px; margin-bottom: 20px; font-weight: 700; }
-        h2 { font-size: 1.3rem; color: #1e293b; margin-top: 0; }
-        h3 { font-size: 1.1rem; color: #1e3a8a; margin-bottom: 8px; }
-        p { font-size: 1.1rem; color: #475569; margin-bottom: 20px; }
-        .sample-link { display: inline-block; background: #2563eb; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 20px 0; }
-        .sample-link:hover { background: #1d4ed8; }
-        .section { background: #f8fafc; padding: 30px; border-radius: 8px; margin-top: 30px; border-left: 3px solid #94a3b8; }
-        .section-alt { background: #f1f5f9; border-left-color: #cbd5e1; }
-        .service { margin-bottom: 28px; }
-        .service:last-child { margin-bottom: 0; }
-        .service p { font-size: 1.0rem; margin-bottom: 10px; }
-        .service-detail { font-size: 0.95rem; color: #64748b; margin: 0; padding-left: 16px; border-left: 2px solid #e2e8f0; }
-        .contact { margin-top: 50px; padding-top: 30px; border-top: 1px solid #e2e8f0; }
-        .footer { margin-top: 60px; font-size: 0.9rem; color: #94a3b8; }
-        input, textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #e2e8f0; border-radius: 4px; font-family: inherit; font-size: 1rem; box-sizing: border-box; }
-        textarea { resize: vertical; min-height: 80px; }
-        button[type="submit"] { background: #2563eb; color: white; padding: 12px 20px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 1rem; }
-        button[type="submit"]:hover { background: #1d4ed8; }
+        :root {
+            --bg: #fbfaf8;
+            --surface: #f3f1ec;
+            --surface-2: #eeebe4;
+            --ink: #16191d;
+            --body: #3f464f;
+            --muted: #767e88;
+            --rule: #ded9d0;
+            --accent: #9a5b18;
+            --accent-ink: #7c4a13;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #14161a;
+                --surface: #1b1e23;
+                --surface-2: #20242a;
+                --ink: #f0ede8;
+                --body: #b9bfc7;
+                --muted: #858d97;
+                --rule: #2c3138;
+                --accent: #d99a4e;
+                --accent-ink: #e8b473;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--body);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+        .wrap { max-width: 660px; margin: 0 auto; padding: 0 24px; }
+        h1, h2, h3 {
+            font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+            color: var(--ink);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        h1 { font-size: 2.45rem; line-height: 1.15; margin: 0 0 22px; }
+        h2 { font-size: 1.45rem; line-height: 1.25; margin: 0 0 16px; }
+        h3 { font-size: 1.08rem; margin: 0 0 8px; letter-spacing: 0; }
+        p { margin: 0 0 18px; }
+        p:last-child { margin-bottom: 0; }
+        a { color: var(--accent-ink); }
+
+        /* Masthead */
+        header {
+            border-bottom: 1px solid var(--rule);
+            padding: 22px 0;
+            margin-bottom: 72px;
+        }
+        .mast {
+            display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+        .mark {
+            font-family: "Iowan Old Style", Georgia, serif;
+            font-size: 1.15rem; font-weight: 600; color: var(--ink);
+            letter-spacing: -0.01em;
+        }
+        .mast .by { color: var(--muted); }
+        .mast .by b { color: var(--body); font-weight: 600; }
+
+        /* Hero */
+        .lede { font-size: 1.2rem; color: var(--body); }
+        .hero { padding-bottom: 8px; }
+
+        .cta {
+            display: inline-block;
+            background: var(--ink); color: var(--bg);
+            padding: 13px 26px; border-radius: 3px;
+            text-decoration: none; font-weight: 600; font-size: 0.98rem;
+            margin-top: 14px;
+            transition: background .15s ease;
+        }
+        .cta:hover { background: var(--accent); color: #fff; }
+
+        /* Sections */
+        section { margin-top: 68px; }
+        .eyebrow {
+            font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em;
+            color: var(--muted); font-weight: 700; margin: 0 0 14px;
+        }
+
+        .spec {
+            font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+            font-size: 0.88rem; line-height: 1.55;
+            background: var(--surface);
+            border-left: 2px solid var(--accent);
+            border-radius: 0 4px 4px 0;
+            padding: 16px 20px; margin: 0 0 12px;
+            color: var(--body);
+        }
+        .spec:last-of-type { margin-bottom: 0; }
+        .spec::before { content: "▸ "; color: var(--accent); }
+
+        .cols { display: grid; gap: 26px; }
+        @media (min-width: 620px) { .cols { grid-template-columns: 1fr 1fr; gap: 32px; } }
+        .col { background: var(--surface); border-radius: 5px; padding: 24px; }
+        .col p { font-size: 0.97rem; }
+
+        .layers { list-style: none; padding: 0; margin: 0; }
+        .layers li {
+            padding: 11px 0; border-bottom: 1px solid var(--rule);
+            display: flex; gap: 16px; align-items: baseline; font-size: 0.97rem;
+        }
+        .layers li:last-child { border-bottom: 0; }
+        .layers b { color: var(--ink); font-weight: 600; flex: 0 0 128px; }
+
+        .note { background: var(--surface-2); border-radius: 5px; padding: 24px; }
+
+        /* Contact */
+        form { margin-top: 22px; }
+        input, textarea {
+            width: 100%; padding: 12px 14px; margin-bottom: 10px;
+            border: 1px solid var(--rule); border-radius: 3px;
+            background: var(--bg); color: var(--ink);
+            font-family: inherit; font-size: 1rem;
+        }
+        input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+        textarea { resize: vertical; min-height: 110px; }
+        button[type=submit] {
+            background: var(--ink); color: var(--bg);
+            padding: 13px 28px; border: 0; border-radius: 3px;
+            font-family: inherit; font-weight: 600; font-size: 0.98rem; cursor: pointer;
+            transition: background .15s ease;
+        }
+        button[type=submit]:hover { background: var(--accent); color: #fff; }
+        .fine { font-size: 0.9rem; color: var(--muted); margin-top: 14px; }
+        #form-success {
+            display: none; margin-top: 20px; padding: 20px;
+            background: var(--surface); border-left: 2px solid var(--accent); border-radius: 0 4px 4px 0;
+        }
+        #form-success strong { color: var(--ink); }
+
+        footer {
+            margin-top: 80px; padding: 24px 0 48px;
+            border-top: 1px solid var(--rule);
+            font-size: 0.87rem; color: var(--muted);
+            display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+        }
+        footer a { color: var(--muted); text-decoration: none; }
+        footer a:hover { color: var(--accent-ink); }
     </style>
     <script type="application/ld+json">
     {
@@ -37,16 +164,10 @@
       "@type": "Organization",
       "name": "SignalStay",
       "url": "https://www.signalstay.ca",
-      "description": "Development site origination, EV charging infrastructure, and energy cost reduction for commercial properties in Kingston, Ontario.",
-      "sameAs": [
-        "https://www.linkedin.com/company/signalstay"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Kingston",
-        "addressRegion": "ON",
-        "addressCountry": "CA"
-      },
+      "description": "Site origination at province scale. SignalStay runs Kestral, an origination engine that searches Ontario for sites matching a build specification, and works both sell-side and demand-side.",
+      "founder": { "@type": "Person", "name": "Sam Marrello" },
+      "sameAs": ["https://www.linkedin.com/company/signalstay"],
+      "areaServed": { "@type": "State", "name": "Ontario, Canada" },
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "sam@signalstay.ca",
@@ -56,90 +177,129 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <h1>SignalStay — Development & energy infrastructure in Kingston, Ontario</h1>
-        <p>We help property owners unlock value and modernize their assets. Whether that means identifying a site's development potential, deploying EV charging, or reducing energy costs through battery storage — we bridge the gap between property owners, developers, operators, and utilities.</p>
-        <p>Based in Kingston. Focused on eastern Ontario.</p>
- 
-        <a href="#contact-form" class="sample-link">Get in Touch</a>
- 
-        <div class="section">
-            <h2>What we do</h2>
- 
-            <div class="service">
-                <h3>Development Site Origination</h3>
-                <p>Kingston is growing. The city has approved significant new density along key corridors, and developers from Ottawa and the GTA are actively looking for sites. We identify properties with unrealized development potential and connect owners with the right buyers — ensuring they get full value for what they have.</p>
-                <p class="service-detail">Zoning and density analysis · Off-market site identification · Developer introductions · Site packaging for properties in intensification corridors</p>
-            </div>
- 
-            <div class="service">
-                <h3>EV Charging Deployment</h3>
-                <p>We connect commercial property owners with national EV charging networks to deploy fully-funded, zero-cost charging hubs. We handle site assessments, utility coordination, and deployment strategy so property owners don't have to.</p>
-                <p class="service-detail">Free site feasibility assessments · Hydro One and utility coordination · Turnkey deployment · No cost or disruption to existing tenants</p>
-            </div>
- 
-            <div class="service">
-                <h3>Energy Cost Reduction</h3>
-                <p>Commercial properties in Ontario are overpaying for electricity. Battery energy storage can reduce peak demand charges by 20–40%, and most building owners don't know the option exists. We assess your facility's load profile, connect you with the right solution, and manage the process.</p>
-                <p class="service-detail">Demand charge and Global Adjustment analysis · Battery storage feasibility · EV and storage integration · Incentive program navigation</p>
+    <header>
+        <div class="wrap">
+            <div class="mast">
+                <span class="mark">SignalStay</span>
+                <span class="by">powered by <b>Kestral</b></span>
             </div>
         </div>
- 
-        <div class="section section-alt" style="margin-top: 20px;">
-            <h2>About</h2>
-            <p>SignalStay is operated by Sam Marrello. I work at the intersection of real estate and energy in Kingston — helping property owners make better decisions about what their assets can do.</p>
-            <p>The approach is practical: understand the property, understand the opportunity, handle the coordination, and make sure everyone involved comes out ahead.</p>
+    </header>
+
+    <main class="wrap">
+        <div class="hero">
+            <h1>Tell us what you need to build. We'll find where it goes.</h1>
+            <p class="lede">SignalStay originates sites — not by driving concession roads one municipality at a time, but by running Kestral, an engine that reads the whole province at once.</p>
+            <a href="#contact" class="cta">Start a search</a>
         </div>
- 
-        <div class="contact">
-            <h2>Start a conversation</h2>
-            <p>Whether you're a property owner exploring your options, a developer looking at Kingston, or a business tired of overpaying for electricity — I'd welcome a conversation.</p>
-            <form id="contact-form" action="https://formspree.io/f/mwvryrwj" method="POST">
+
+        <section>
+            <p class="eyebrow">The engine</p>
+            <h2>A province, held as data</h2>
+            <p>Kestral holds Ontario as structured layers — parcel geometry, ownership, zoning and official-plan designation, servicing, grid capacity, application and permit history, transaction records — and queries all of it together.</p>
+            <p>The work it does isn't new. Analysts have always done it: narrow a jurisdiction to a shortlist, then check the shortlist against real constraints. What's new is the scale and the clock. A search that takes a team months takes Kestral a pass.</p>
+            <ul class="layers">
+                <li><b>Input</b><span>A specification. What you're building, what it requires, what you can't tolerate.</span></li>
+                <li><b>Output</b><span>A ranked shortlist of parcels that survive every constraint — with ownership, encumbrances, and the case for each.</span></li>
+                <li><b>Then</b><span>We approach the owner.</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <p class="eyebrow">Specifications</p>
+            <h2>What you actually ask for</h2>
+            <p>The spec is yours, and it can be as hard as your project really is. A few in the shape of ones we run:</p>
+            <p class="spec">20+ contiguous acres, industrial or convertible, 15 MW available at the substation, three-phase to the lot line, inside 90 minutes of a 400-series highway</p>
+            <p class="spec">Assembly potential on a designated corridor, four storeys as-of-right, fragmented ownership, no heritage designation</p>
+            <p class="spec">Serviced, level, outside the regulated floodplain, held more than fifteen years by a non-corporate owner</p>
+            <p>Kestral doesn't care which vertical the spec comes from. Data centre, warehouse, storage, generation, subdivision, self-storage, aggregate — the constraints differ, the search doesn't.</p>
+        </section>
+
+        <section>
+            <p class="eyebrow">Two sides</p>
+            <h2>Who this is for</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3>You need a site</h3>
+                    <p>Developers, operators, funds, industrial users. You know your build. You don't know where it goes — and listings only show you what someone has already decided to sell.</p>
+                    <p>Most of what fits you isn't on the market. We find it, test it against your constraints before you spend a dollar on diligence, and open the conversation with the owner.</p>
+                </div>
+                <div class="col">
+                    <h3>You own one</h3>
+                    <p>You may be holding something worth more than the use it's under. Designations change. Corridors get drawn. Grid capacity shows up at one substation and not the next one over.</p>
+                    <p>We'll tell you what your parcel looks like from the demand side — what it qualifies for, who is searching for it, and what that's worth. If there's a buyer, we bring them.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <p class="eyebrow">Limits</p>
+            <h2>What the engine doesn't do</h2>
+            <div class="note">
+                <p>Kestral narrows. It doesn't decide. Every shortlist gets walked, checked against the source records, and pressure-tested by a person before it reaches you — because data is stale, municipal files disagree with each other, and no query knows whether an owner is ready to sell.</p>
+                <p>The engine is for reach. The judgment is still mine.</p>
+            </div>
+        </section>
+
+        <section>
+            <p class="eyebrow">About</p>
+            <h2>Who runs it</h2>
+            <p>SignalStay is operated by Sam Marrello. Kestral is mine — I built it because the work it does was being done by hand, slowly, one municipality at a time, by people who could only ever look at a fraction of the map.</p>
+            <p>I'm from eastern Ontario and I'd rather work here. The engine has no opinion about geography; I have a mild one. If what fits your spec sits somewhere else in the province, that's fine — we'll go there.</p>
+        </section>
+
+        <section id="contact">
+            <p class="eyebrow">Contact</p>
+            <h2>Start a search</h2>
+            <p>Bring a spec, a parcel, or a question. The first conversation costs nothing and commits you to nothing; terms get scoped per engagement, once we both know what the work is.</p>
+            <form action="https://formspree.io/f/mwvryrwj" method="POST">
                 <input type="text" name="name" placeholder="Your name" required>
                 <input type="email" name="email" placeholder="Your email" required>
-                <input type="text" name="property" placeholder="Property address or company (optional)">
-                <textarea name="message" placeholder="What are you looking to do?"></textarea>
- 
-                <!-- Honeypot -->
-                <input type="text" name="_gotcha" style="display:none">
+                <input type="text" name="company" placeholder="Company or property address (optional)">
+                <textarea name="message" placeholder="What are you looking for — or what are you sitting on?"></textarea>
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                 <button type="submit">Send</button>
             </form>
-            <p style="margin-top:15px;font-size:0.95rem;color:#64748b;">
-                No cost, no obligation.
-            </p>
-            <div id="form-success" style="display:none; margin-top:20px; padding:20px; background:#ecfdf5; border-radius:8px; color:#065f46;">
-                <strong>Thanks — got it.</strong><br>
+            <p class="fine">Or email <a href="mailto:sam@signalstay.ca">sam@signalstay.ca</a> directly.</p>
+            <div id="form-success">
+                <strong>Got it.</strong><br>
                 I'll follow up within 24 hours.
             </div>
-        </div>
- 
-        <div class="footer">
-            SignalStay &copy; 2026 | Kingston, Ontario
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer class="wrap">
+        <span>SignalStay &copy; 2026 — Ontario, Canada</span>
+        <a href="mailto:sam@signalstay.ca">sam@signalstay.ca</a>
+    </footer>
+
     <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const form = document.getElementById("contact-form");
+        const form = document.querySelector("#contact form");
         const successMessage = document.getElementById("form-success");
         if (!form) return;
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            const data = new FormData(form);
+            const button = form.querySelector("button[type=submit]");
+            button.disabled = true;
+            button.textContent = "Sending…";
             try {
                 const response = await fetch(form.action, {
                     method: form.method,
-                    body: data,
+                    body: new FormData(form),
                     headers: { "Accept": "application/json" }
                 });
                 if (response.ok) {
                     form.style.display = "none";
                     successMessage.style.display = "block";
-                } else {
-                    alert("Something went wrong. Please try again.");
+                    return;
                 }
+                alert("Something went wrong. Please try again, or email sam@signalstay.ca.");
             } catch (error) {
                 alert("Network error. Please check your connection and try again.");
             }
+            button.disabled = false;
+            button.textContent = "Send";
         });
     });
     </script>
